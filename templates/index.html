@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+
+        <style type="text/css">
+            .center {
+                text-align: center;
+                padding-top: 10px 0;
+            }
+
+            body {
+                background: green;
+                background-size: 400% 400%;
+                animation: gradient 20s ease infinite;
+                height: 100vh;
+            }
+
+            @keyframes gradient {
+                100% {
+                    background-position: 100% 100%;
+                }
+                100% {
+                    background-position: 100% 100%;
+                }
+                100% {
+                    background-position: 100% 100%;
+                }
+            }
+
+            form {
+                font-size: large;
+            }
+
+            input {
+                width: 300px;
+                height: 80px;
+                font-size: xx-large;
+                margin: auto;
+                position: relative;
+                text-align: center;
+            }
+            h1 {
+               padding-top: 10px;
+               text-align: center;
+               font-size: 70px;
+               color: black;
+               font-family: Georgia, serif;
+               font-style: italic;
+            }
+
+            #submit {
+                background-color: blue;
+                color: white;
+            }
+
+            select, option {
+                width: 300px;
+                height: 80px;
+                font-size: xx-large;
+                margin: auto;
+                position: relative;
+                text-align: center;
+            }
+
+            button {
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
+        </style>
+
+        <title>PDF to Audio App</title>
+    </head>
+
+    <h1>
+        PDF to Audio
+    </h1>
+
+    <body>
+        <div>
+            <div class="center">
+                <form id="insert" action="{{ url_for('say') }}" method="POST">
+                    <input type="text" name="thing" placeholder="Enter PDF Name" required>
+                    <br><br>
+
+                    <input id="submit" type="submit" onsubmit="validateTicker()" value="Add">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
